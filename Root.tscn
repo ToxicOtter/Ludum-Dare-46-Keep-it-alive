@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 31.7236 )
+
+[node name="Root" type="Node2D"]
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2( 597.872, 618.707 )
+scale = Vector2( 50, 5 )
+
+[node name="Sprite" type="Sprite" parent="Ground"]
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 363.027, 424.674 )
